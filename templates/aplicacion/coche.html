@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+
+<body>
+{% if error %}
+    {{error}}
+{% endif %}
+Clientes que han alquilado el coche modelo {{ coche.id }} con identificador
+<table>
+    {% for alquiler in alquileres %}
+        <tr>
+            <th>{{alquiler.id }}</th>
+            <th>{{alquiler.cliente.nombreC}}</th>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
