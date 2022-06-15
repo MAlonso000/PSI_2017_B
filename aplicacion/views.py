@@ -13,7 +13,7 @@ def lista_alquileres(request):
         context_dict['alquileres'] = Alquiler.objects.filter(coche__id=1001)
         context_dict['error'] = None
 
-    except Coche.DoesNotExist:
+    except BaseException:
 
         context_dict['error'] = "Coche no encontrado."
         context_dict['alquileres'] = None
